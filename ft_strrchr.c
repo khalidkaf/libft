@@ -1,41 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/08 17:04:37 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/11/09 14:08:29 by kkafmagh         ###   ########.fr       */
+/*   Created: 2024/11/09 18:26:59 by kkafmagh          #+#    #+#             */
+/*   Updated: 2024/11/09 18:58:17 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t siz)
+char	*ft_strrchr(const char *s, int c)
 {
-	size_t	i;
+	int	i;
 
-	i = 0;
-	while (i < siz - 1 && src[i] != '\0')
+	i = strlen(s) + 1;
+    s =s+i;
+	while (i)
 	{
-		dst[i] = src[i];
-		i++;
+		if (*s == c)
+		{
+			return (s);
+		}
+		i--;
+        s--;
 	}
-	if (siz > 0)
-	{
-		dst[i] = '\0';
-	}
-	return (strlen(src));
+	return (NULL);
 }
 
 // int	main(void)
 // {
-// 	char str[] = "qwer";
-// 	const char *str2 = "123456789f";
-
-// 	printf("%s\n", str);
-// 	printf("%zu\n", ft_strlcpy(str, str2, 10));
-// 	printf("%s\n", str);
-// 	// printf("%d", strlcpy(str, str2, 3));
+// 	char *str = "hello";
+// 	int c = 'e';
+// 	ft_strrchr(str, c);
 // }

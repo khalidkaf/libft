@@ -1,38 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/09 18:26:59 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/11/10 18:13:05 by kkafmagh         ###   ########.fr       */
+/*   Created: 2024/11/10 12:30:46 by kkafmagh          #+#    #+#             */
+/*   Updated: 2024/11/10 12:41:46 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int	i;
+	unsigned char	*tmp1;
+	unsigned char	*tmp2;
 
-	i = strlen(s) + 1;
-	s = s + i;
-	while (i)
+	tmp1 = s1;
+	tmp2 = s2;
+	while (n)
 	{
-		if (*s == c)
+		if (tmp1[0] != tmp2[0])
 		{
-			return (s);
+			return (tmp1[0] - tmp2[0]);
 		}
-		i--;
-		s--;
+		tmp1++;
+		tmp2++;
+		n--;
 	}
-	return (NULL);
+	return (0);
 }
 
 // int	main(void)
 // {
-// 	char *str = "hello";
-// 	int c = 'e';
-// 	ft_strrchr(str, c);
+//     char s1[] = {21, 651, 54, 51, 54};
+//     char s2[] = {21, 651, 312, 51, 54};
+//     printf("ft_ : %i\n", ft_memcmp(s1, s2, 5));
+//     printf("mem : %i\n", memcmp(s1, s2, 5));
+
 // }

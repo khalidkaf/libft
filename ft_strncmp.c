@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/09 18:26:59 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/11/10 18:13:05 by kkafmagh         ###   ########.fr       */
+/*   Created: 2024/11/10 12:05:18 by kkafmagh          #+#    #+#             */
+/*   Updated: 2024/11/10 12:05:19 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	int	i;
 
-	i = strlen(s) + 1;
-	s = s + i;
-	while (i)
+	i = 0;
+	while (n--)
 	{
-		if (*s == c)
+		if ((s1[i] != s2[i]) || (!s1[i] || !s2[i]))
 		{
-			return (s);
+			return (s1[i] - s2[i]);
 		}
-		i--;
-		s--;
+		i++;
 	}
-	return (NULL);
+	return (0);
 }
-
-// int	main(void)
+// int	main(int argc, char **argv)
 // {
-// 	char *str = "hello";
-// 	int c = 'e';
-// 	ft_strrchr(str, c);
+// 	printf("ft_ : %i\n", ft_strncmp(argv[1], argv[2], atoi(argv[3])));
+// 	printf("strncmp : %i", strncmp(argv[1], argv[2], atoi(argv[3])));
 // }

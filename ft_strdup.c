@@ -1,38 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/09 18:26:59 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/11/10 18:13:05 by kkafmagh         ###   ########.fr       */
+/*   Created: 2024/11/10 19:58:13 by kkafmagh          #+#    #+#             */
+/*   Updated: 2024/11/10 20:11:17 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strdup(const char *s)
 {
-	int	i;
+	int		i;
+	char	*str;
 
-	i = strlen(s) + 1;
-	s = s + i;
-	while (i)
+	i = 0;
+	str = malloc(sizeof(char) * (strlen(s) + 1));
+	if (!str)
+		return (NULL);
+	while (s[i])
 	{
-		if (*s == c)
-		{
-			return (s);
-		}
-		i--;
-		s--;
+		str[i] = s[i];
+		i++;
 	}
-	return (NULL);
+	str[i] = 0;
+	return (str);
 }
 
 // int	main(void)
 // {
-// 	char *str = "hello";
-// 	int c = 'e';
-// 	ft_strrchr(str, c);
+// 	char *str = "khalid";
+// 	printf("%s\n", ft_strdup(str));
+// 	printf("%s\n", strdup(str));
+// 	printf("%p\n", ft_strdup(str));
+// 	printf("%p\n", strdup(str));
 // }

@@ -6,7 +6,7 @@
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 19:58:13 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/11/10 20:11:17 by kkafmagh         ###   ########.fr       */
+/*   Updated: 2024/11/10 20:21:02 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strdup(const char *s)
 	char	*str;
 
 	i = 0;
+	if (!s)
+		return (NULL);
 	str = malloc(sizeof(char) * (strlen(s) + 1));
 	if (!str)
 		return (NULL);
@@ -30,11 +32,11 @@ char	*ft_strdup(const char *s)
 	return (str);
 }
 
-// int	main(void)
-// {
-// 	char *str = "khalid";
-// 	printf("%s\n", ft_strdup(str));
-// 	printf("%s\n", strdup(str));
-// 	printf("%p\n", ft_strdup(str));
-// 	printf("%p\n", strdup(str));
-// }
+int	main(void)
+{
+	char *str = "khalid";
+	printf("%s\n", ft_strdup(str));
+	printf("%s\n", strdup(str));
+	printf("%p\n", ft_strdup(str));
+	printf("%p\n", strdup(str));
+}

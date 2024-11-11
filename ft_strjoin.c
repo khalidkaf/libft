@@ -1,32 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/10 19:58:13 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/11/11 18:22:57 by kkafmagh         ###   ########.fr       */
+/*   Created: 2024/11/11 18:10:02 by kkafmagh          #+#    #+#             */
+/*   Updated: 2024/11/11 18:21:50 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		i;
+	int		j;
 	char	*str;
 
 	i = 0;
-	if (!s)
-		return (NULL);
-	str = malloc(sizeof(char) * (strlen(s) + 1));
+	j = 0;
+	str = malloc(sizeof(char) * (strlen(s1) + strlen(s2)) + 1);
 	if (!str)
 		return (NULL);
-	while (s[i])
+	if (!s1 && !s2)
+		return (NULL);
+	while (s1[i])
 	{
-		str[i] = s[i];
+		str[i] = s1[i];
 		i++;
+	}
+	while (s2[j])
+	{
+		str[i] = s2[j];
+		i++;
+		j++;
 	}
 	str[i] = 0;
 	return (str);
@@ -34,9 +42,8 @@ char	*ft_strdup(const char *s)
 
 // int	main(void)
 // {
-// 	char *str = "khalid";
-// 	printf("%s\n", ft_strdup(str));
-// 	printf("%s\n", strdup(str));
-// 	printf("%p\n", ft_strdup(str));
-// 	printf("%p\n", strdup(str));
+// 	char *str1 = "";
+// 	char *str2 = "";
+// 	printf("%s\n", ft_strjoin(str1, str2));
+// 	printf("%p", ft_strjoin(str1, str2));
 // }

@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/10 19:58:13 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/11/11 18:22:57 by kkafmagh         ###   ########.fr       */
+/*   Created: 2024/11/11 17:00:49 by kkafmagh          #+#    #+#             */
+/*   Updated: 2024/11/11 18:22:37 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	int		i;
+	int		j;
 	char	*str;
 
-	i = 0;
-	if (!s)
+	i = start;
+	j = 0;
+	if (!s || strlen(s) < start)
 		return (NULL);
-	str = malloc(sizeof(char) * (strlen(s) + 1));
+	str = malloc((sizeof(char) * len) + 1);
 	if (!str)
 		return (NULL);
-	while (s[i])
+	while (s[i] && len)
 	{
-		str[i] = s[i];
+		str[j] = s[i];
 		i++;
+		j++;
+		len--;
 	}
 	str[i] = 0;
 	return (str);
@@ -34,9 +38,9 @@ char	*ft_strdup(const char *s)
 
 // int	main(void)
 // {
-// 	char *str = "khalid";
-// 	printf("%s\n", ft_strdup(str));
-// 	printf("%s\n", strdup(str));
-// 	printf("%p\n", ft_strdup(str));
-// 	printf("%p\n", strdup(str));
+// char *str = "0";
+// printf("%s\n", ft_substr(str, 1, 1));
+// printf("%s\n", substr(str, 3, 3));
+// printf("%p\n", ft_substr(str, 3, 6));
+// printf("%p\n", substr(str, 3, 3));
 // }

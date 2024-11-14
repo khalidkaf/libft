@@ -1,40 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 16:16:08 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/11/12 17:04:53 by kkafmagh         ###   ########.fr       */
+/*   Created: 2024/11/14 19:52:27 by kkafmagh          #+#    #+#             */
+/*   Updated: 2024/11/14 20:00:02 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	unsigned char	*tmp;
-
-	tmp = s;
-	while (n)
+	if (s == NULL || f == NULL)
 	{
-		*tmp = (unsigned char)c;
-		tmp++;
-		n--;
+		return ;
 	}
-	return (s);
+	unsigned int i = 0;
+	while (s[i])
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }
-
-// int	main(void)
-// {
-// 	char	str[] = "my test";
-
-// 	printf("%s", ft_memset(str, 65, 4));
-// 	printf("%c", '\n');
-// 	printf("%p", ft_memset(str, 65, 4));
-// 	printf("%c", '\n');
-// 	printf("%s", memset(str, 65, 4));
-// 	printf("%c", '\n');
-// 	printf("%p", memset(str, 65, 4));
-// }

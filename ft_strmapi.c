@@ -1,40 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 16:16:08 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/11/12 17:04:53 by kkafmagh         ###   ########.fr       */
+/*   Created: 2024/11/14 18:08:53 by kkafmagh          #+#    #+#             */
+/*   Updated: 2024/11/14 19:50:12 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <ctype.h>
 
-void	*ft_memset(void *s, int c, size_t n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	unsigned char	*tmp;
+	char			*str;
+	unsigned int	i;
 
-	tmp = s;
-	while (n)
+	if (!s || !f)
 	{
-		*tmp = (unsigned char)c;
-		tmp++;
-		n--;
+		return (NULL);
 	}
-	return (s);
+	str = malloc(sizeof(char) * strlen(s) + 1);
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (i < strlen(s))
+	{
+		str[i] = f(i, s[i]);
+		i++;
+	}
+	str[i] = 0;
+	return (str);
 }
-
-// int	main(void)
-// {
-// 	char	str[] = "my test";
-
-// 	printf("%s", ft_memset(str, 65, 4));
-// 	printf("%c", '\n');
-// 	printf("%p", ft_memset(str, 65, 4));
-// 	printf("%c", '\n');
-// 	printf("%s", memset(str, 65, 4));
-// 	printf("%c", '\n');
-// 	printf("%p", memset(str, 65, 4));
-// }

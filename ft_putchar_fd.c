@@ -1,40 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 16:16:08 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/11/12 17:04:53 by kkafmagh         ###   ########.fr       */
+/*   Created: 2024/11/14 20:00:42 by kkafmagh          #+#    #+#             */
+/*   Updated: 2024/11/14 20:08:51 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 
-void	*ft_memset(void *s, int c, size_t n)
+void	ft_putchar_fd(char c, int fd)
 {
-	unsigned char	*tmp;
-
-	tmp = s;
-	while (n)
-	{
-		*tmp = (unsigned char)c;
-		tmp++;
-		n--;
-	}
-	return (s);
+	write(fd, &c, 1);
 }
 
 // int	main(void)
 // {
-// 	char	str[] = "my test";
-
-// 	printf("%s", ft_memset(str, 65, 4));
-// 	printf("%c", '\n');
-// 	printf("%p", ft_memset(str, 65, 4));
-// 	printf("%c", '\n');
-// 	printf("%s", memset(str, 65, 4));
-// 	printf("%c", '\n');
-// 	printf("%p", memset(str, 65, 4));
+// 	char c = 'k';
+// 	int fd = 1;
+// 	ft_putchar_fd(c, fd);
 // }

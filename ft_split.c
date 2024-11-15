@@ -6,7 +6,7 @@
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 10:32:40 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/11/14 16:15:48 by kkafmagh         ###   ########.fr       */
+/*   Updated: 2024/11/15 11:56:47 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,9 @@ int	countwords(char *s, char c)
 	return (j);
 }
 
+
+
+
 int	nextword(char *str, char c)
 {
 	int	i;
@@ -50,14 +53,14 @@ int	nextword(char *str, char c)
 		j++;
 	}
 	printf("nextword  : %i\n", j);
-	return (j + 1);
+	return (j);
 }
 int	len(char *str)
 {
 	int	i;
 
 	i = 0;
-	while (str[i])
+	while (str[i] != '\0')
 		i++;
 	// printf("sortie de len : %i\n", i);
 	return (i);
@@ -88,91 +91,72 @@ char	**ft_split(char const *s, char c)
 	char	**tab;
 	char	*str2;
 
-	if (!s[0])
-		return (NULL);
-	tab = malloc(countwords((char *)s, c) + 1);
-	// str2 = malloc(nextword((char *)s, c) + 1);
-	k = 0;
 	i = 0;
+	if (!s)
+		return (NULL);
+	tab = malloc(countwords((char *)s, c) + 1 * sizeof(char *));
+	str2 = malloc(sizeof(char *) * nextword((char *)s, c) + 1);
+	// str2 = malloc(sizeof(char *)*6 + 1);
+	if (!tab)
+		return (NULL);
+	k = 0;
 	j = 0;
-	// while (i < len((char *)s))
-	// {
-	// 	if (s[i] != c)
-	// 	{
-	// 		str2[j] = s[i];
-	// 		j++;
-	// 	}
-	// 	else if (s[i] == c && s[i - 1] != c)
-	// 	{
-	// 		str2[j] = '\0';
-	// 	}
-	// 	if ((s[i] != c && s[i + 1] == c) || (s[i] != c && s[i + 1] == 0))
-	// 	{
-	// 		j = 0;
-	// 		tab[k] = str2;
-	// 		k++;
-	// 		str2 = malloc(nextword((char *)s, c) + 1);
-	// 	}
-	// 	i++;
-	// }
-	// printf("str2  : %s\n", str2);
+	if (!str2)
+	{
+		return (NULL);
+	}
 	while (i < len((char *)s))
 	{
-		if (k < countwords((char *)s, c))
-		{
-			// printf("combien de mots\n");
-			str2 = malloc(nextword((char *)s + i, c));
-			
-		}
 		while (s[i] == c)
-		{
 			i++;
-		}
-		// str2 = malloc(nextword((char *)s, c) + 1);
-		while (s[i] != c && s[i] != 0)
+		if (s[i] != '\0')
 		{
-			str2[j] = s[i];
-			i++;
-			j++;
-		}
-		// if ((s[i] == c && s[i - 1] != c) || (s[i] == 0 && s[i - 1] != c))
-		// if (str2[0])
-		if (j >= len(str2))
-		
-		{
-			// j++;
-			// printf("str2  : %s\n", str2);
-			// printf("last boucle j  : %i\n", j);
-			str2[j] = '\0';
-			tab[k] = str2;
-			str2 = NULL;
-			
-			printf("tab[k] : %s\n", tab[k]);
+			str2 = malloc(sizeof(char *) * nextword((char *)s, c) + 1);
+			if (!str2)
+			{
+				// Free memory in case of allocation failure
+				while (k > 0)
+				{
+					free(tab[--k]);
+				}
+				free(tab);
+				return (NULL);
+			}
 			j = 0;
-			k++;
-			
+			while (s[i] != c && s[i] != '\0')
+			{
+				str2[j++] = s[i++];
+			}
+			str2[j] = '\0';
+			// Add str2 to the result array
+			tab[k++] = str2;
 		}
-
-		i++;
-		// if (s[i] != c)
+		// if (k < countwords((char *)s, c))
+		// {
+		// 	// printf("combien de mots\n");
+		// 	str2 = malloc(sizeof(char *) * nextword((char *)s, c) + 1);
+		// 	if (!str2)
+		// 	{
+		// 		return (NULL);
+		// 	}
+		// }
+		// while (s[i] != c && s[i] != 0)
 		// {
 		// 	str2[j] = s[i];
+		// 	i++;
 		// 	j++;
 		// }
-		// else if (s[i] == c && s[i - 1] != c)
+		// if (j >= len(str2))
 		// {
 		// 	str2[j] = '\0';
-		// }
-		// if ((s[i] != c && s[i + 1] == c) || (s[i] != c && s[i + 1] == 0))
-		// {
-		// 	j = 0;
 		// 	tab[k] = str2;
+		// 	str2 = NULL;
+		// 	printf("tab[k] : %s\n", tab[k]);
+		// 	j = 0;
 		// 	k++;
-		// 	str2 = malloc(nextword((char *)s, c) + 1);
 		// }
 		// i++;
-			printf("i : %i\n", i);
-
+		// printf("i : %i\n", i);
 	}
 	// free(str2);
 	tab[k] = NULL;

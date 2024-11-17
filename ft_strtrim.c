@@ -6,13 +6,13 @@
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 18:26:08 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/11/11 19:23:56 by kkafmagh         ###   ########.fr       */
+/*   Updated: 2024/11/17 17:52:17 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_len(char const *s1, char const *set)
+static int	count_len(char const *s1, char const *set)
 {
 	int	i;
 	int	j;

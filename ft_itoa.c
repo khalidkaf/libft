@@ -6,13 +6,13 @@
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 16:16:52 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/11/14 18:06:23 by kkafmagh         ###   ########.fr       */
+/*   Updated: 2024/11/17 17:46:52 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	sizenbr(long int n)
+static int	sizenbr(long int n)
 {
 	int	i;
 

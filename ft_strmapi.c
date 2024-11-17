@@ -6,12 +6,11 @@
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 18:08:53 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/11/14 19:50:12 by kkafmagh         ###   ########.fr       */
+/*   Updated: 2024/11/17 17:51:19 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <ctype.h>
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

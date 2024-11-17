@@ -6,13 +6,13 @@
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 10:32:40 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/11/15 14:31:52 by kkafmagh         ###   ########.fr       */
+/*   Updated: 2024/11/17 17:49:47 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	countwords(char const *s, char c)
+static int	countwords(char const *s, char c)
 {
 	int	i;
 	int	j;
@@ -32,7 +32,7 @@ int	countwords(char const *s, char c)
 	return (j);
 }
 
-int	len(char const *str)
+static int	len(char const *str)
 {
 	int	i;
 
@@ -41,7 +41,7 @@ int	len(char const *str)
 		i++;
 	return (i);
 }
-char	*mallocaword(char const *str, int start, int end)
+static char	*mallocaword(char const *str, int start, int end)
 {
 	int		i;
 	char	*s;
@@ -88,19 +88,15 @@ char	**ft_split(char const *s, char c)
 		i++;
 	}
 	tab[k] = NULL;
-	// printf("tab[0] : %s\n", tab[0]);
-	// printf("tab[1] : %s\n", tab[1]);
-	// printf("tab[2] : %s\n", tab[2]);
-	// printf("tab[3] : %s\n", tab[3]);
 	return (tab);
 }
 
-int	main(void)
-{
-	const char	*str = "khalid ";
-	const char	c = ' ';
+// int	main(void)
+// {
+// 	const char	*str = "khalid ";
+// 	const char	c = ' ';
 
-	ft_split(str, c);
-	// mallocaword(str);
-	// ft_split(str, ' ');
-}
+// 	ft_split(str, c);
+// 	// mallocaword(str);
+// 	// ft_split(str, ' ');
+// }

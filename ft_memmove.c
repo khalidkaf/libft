@@ -6,7 +6,7 @@
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 16:30:53 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/11/08 17:03:40 by kkafmagh         ###   ########.fr       */
+/*   Updated: 2024/11/18 11:25:21 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	int				i;
 
 	tmp = dest;
-	copier = src;
-	copier2 = src;
+	copier = (unsigned char *)src;
+	copier2 = (unsigned char *)src;
 	i = n;
 	while (i--)
 	{

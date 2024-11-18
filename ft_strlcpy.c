@@ -6,7 +6,7 @@
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 17:04:37 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/11/09 14:08:29 by kkafmagh         ###   ########.fr       */
+/*   Updated: 2024/11/18 11:21:01 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t siz)
 	{
 		dst[i] = '\0';
 	}
-	return (strlen(src));
+	return (ft_strlen(src));
 }
 
 // int	main(void)

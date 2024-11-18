@@ -6,7 +6,7 @@
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 16:08:25 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/11/08 16:28:54 by kkafmagh         ###   ########.fr       */
+/*   Updated: 2024/11/18 11:24:28 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned char	*cpier;
 
 	tmp = dest;
-	cpier = src;
+	cpier = (unsigned char *)src;
 	while (n--)
 	{
 		*tmp = *cpier;

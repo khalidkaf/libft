@@ -6,7 +6,7 @@
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 17:00:49 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/11/11 18:22:37 by kkafmagh         ###   ########.fr       */
+/*   Updated: 2024/11/18 11:21:46 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = start;
 	j = 0;
-	if (!s || strlen(s) < start)
+	if (!s || ft_strlen(s) < start)
 		return (NULL);
 	str = malloc((sizeof(char) * len) + 1);
 	if (!str)

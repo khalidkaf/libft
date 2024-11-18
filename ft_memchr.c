@@ -6,7 +6,7 @@
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 12:08:22 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/11/10 18:12:47 by kkafmagh         ###   ########.fr       */
+/*   Updated: 2024/11/18 11:31:10 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	unsigned char	*tmp;
 	int				i;
 
-	tmp = s;
+	tmp = (unsigned char *)s;
 	i = 0;
 	while (n)
 	{

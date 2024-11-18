@@ -6,16 +6,12 @@
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 10:03:19 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/11/17 17:48:56 by kkafmagh         ###   ########.fr       */
+/*   Updated: 2024/11/18 11:50:43 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_putchar_fd(char c, int fd)
-{
-	write(fd, &c, 1);
-}
 void	ft_putnbr_fd(int n, int fd)
 {
 	long	nbr;

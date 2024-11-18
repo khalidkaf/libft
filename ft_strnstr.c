@@ -6,7 +6,7 @@
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 12:49:23 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/11/17 17:51:58 by kkafmagh         ###   ########.fr       */
+/*   Updated: 2024/11/18 11:34:00 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,25 +24,25 @@ static unsigned int	ft_len(const char *str)
 	return (i);
 }
 
-static int	ft_memcmp(const void *s1, const void *s2, size_t n)
-{
-	unsigned char	*tmp1;
-	unsigned char	*tmp2;
+// int	ft_memcmp(const void *s1, const void *s2, size_t n)
+// {
+// 	unsigned char	*tmp1;
+// 	unsigned char	*tmp2;
 
-	tmp1 = s1;
-	tmp2 = s2;
-	while (n)
-	{
-		if (tmp1[0] != tmp2[0])
-		{
-			return (tmp1[0] - tmp2[0]);
-		}
-		tmp1++;
-		tmp2++;
-		n--;
-	}
-	return (0);
-}
+// 	tmp1 = s1;
+// 	tmp2 = s2;
+// 	while (n)
+// 	{
+// 		if (tmp1[0] != tmp2[0])
+// 		{
+// 			return (tmp1[0] - tmp2[0]);
+// 		}
+// 		tmp1++;
+// 		tmp2++;
+// 		n--;
+// 	}
+// 	return (0);
+// }
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
@@ -54,7 +54,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 			return ((char *)big);
 	if (*little == '\0')
 		return ((char *)big);
-	if (*big == "\0")
+	if (*big == '\0')
 		return (NULL);
 	while (*big && lenlittle <= len)
 	{

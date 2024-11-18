@@ -6,7 +6,7 @@
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 18:08:53 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/11/17 17:51:19 by kkafmagh         ###   ########.fr       */
+/*   Updated: 2024/11/18 11:21:19 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	{
 		return (NULL);
 	}
-	str = malloc(sizeof(char) * strlen(s) + 1);
+	str = malloc(sizeof(char) * ft_strlen(s) + 1);
 	if (!str)
 		return (NULL);
 	i = 0;
-	while (i < strlen(s))
+	while (i < ft_strlen(s))
 	{
 		str[i] = f(i, s[i]);
 		i++;

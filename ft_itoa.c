@@ -6,7 +6,7 @@
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 16:16:52 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/11/17 17:46:52 by kkafmagh         ###   ########.fr       */
+/*   Updated: 2024/11/18 11:37:09 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ char	*ft_itoa(int n)
 	if (str == NULL)
 		return (NULL);
 	str[len + 1] = '\0';
-	len = len;
 	if (nbr == 0)
 		str[0] = '0';
 	else if (nbr < 0)

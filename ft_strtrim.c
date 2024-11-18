@@ -6,7 +6,7 @@
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 18:26:08 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/11/17 17:52:17 by kkafmagh         ###   ########.fr       */
+/*   Updated: 2024/11/18 11:36:03 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,14 @@ static int	count_len(char const *s1, char const *set)
 	int	j;
 	int	size;
 
+	i = 0;
+	j = 0;
+	size = 0;
 	while (s1[i])
 	{
 		while (set[j] && (s1[i] != set[j]))
 		{
-			if (j == strlen(set) - 1)
+			if (j == (int)ft_strlen(set) - 1)
 			{
 				size++;
 			}
@@ -51,7 +54,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		j = 0;
 		while (set[j] && (s1[i] != set[j]))
 		{
-			if (j == strlen(set) - 1)
+			if (j == (int)ft_strlen(set) - 1)
 			{
 				str[k] = s1[i];
 				k++;

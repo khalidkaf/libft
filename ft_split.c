@@ -6,7 +6,7 @@
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 10:32:40 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/11/17 17:49:47 by kkafmagh         ###   ########.fr       */
+/*   Updated: 2024/11/19 11:02:39 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ static int	len(char const *str)
 		i++;
 	return (i);
 }
+
 static char	*mallocaword(char const *str, int start, int end)
 {
 	int		i;
@@ -63,14 +64,12 @@ static char	*mallocaword(char const *str, int start, int end)
 char	**ft_split(char const *s, char c)
 {
 	int		i;
-	int		j;
 	int		k;
 	int		index;
 	char	**tab;
 
 	index = -1;
 	i = 0;
-	j = 0;
 	k = 0;
 	tab = malloc(sizeof(char *) * (countwords(s, c) + 1));
 	if (!s || !tab)

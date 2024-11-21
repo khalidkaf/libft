@@ -6,9 +6,11 @@
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:05:55 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/11/07 12:19:23 by kkafmagh         ###   ########.fr       */
+/*   Updated: 2024/11/19 11:29:33 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isdigit(int c)
 {

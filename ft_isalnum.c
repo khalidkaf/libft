@@ -6,9 +6,11 @@
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:20:19 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/11/07 12:32:51 by kkafmagh         ###   ########.fr       */
+/*   Updated: 2024/11/19 11:28:37 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isalnum(int c)
 {

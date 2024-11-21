@@ -6,9 +6,11 @@
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:43:20 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/11/07 12:46:58 by kkafmagh         ###   ########.fr       */
+/*   Updated: 2024/11/19 11:29:39 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int c)
 {

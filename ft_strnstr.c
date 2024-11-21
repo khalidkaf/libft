@@ -6,23 +6,23 @@
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 12:49:23 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/11/18 11:34:00 by kkafmagh         ###   ########.fr       */
+/*   Updated: 2024/11/21 14:23:58 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static unsigned int	ft_len(const char *str)
-{
-	int	i;
+// static unsigned int	ft_len(const char *str)
+// {
+// 	int	i;
 
-	i = 0;
-	while (str[i])
-	{
-		i++;
-	}
-	return (i);
-}
+// 	i = 0;
+// 	while (str[i])
+// 	{
+// 		i++;
+// 	}
+// 	return (i);
+// }
 
 // int	ft_memcmp(const void *s1, const void *s2, size_t n)
 // {
@@ -47,8 +47,10 @@ static unsigned int	ft_len(const char *str)
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	lenlittle;
+	size_t	count;
 
-	lenlittle = ft_len(little);
+	lenlittle = ft_strlen(little);
+	count = 0;
 	if (little == NULL || big == NULL)
 		if (len == 0)
 			return ((char *)big);
@@ -56,11 +58,14 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		return ((char *)big);
 	if (*big == '\0')
 		return (NULL);
-	while (*big && lenlittle <= len)
+	while (*big && lenlittle <= len && count < len)
 	{
 		if (!ft_memcmp(big, little, lenlittle))
 			return ((char *)big);
+		if (ft_strlen(little) > (ft_strlen(big) - count))
+			return (NULL);
 		big++;
+		count++;
 	}
 	return (NULL);
 }

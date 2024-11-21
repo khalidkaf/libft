@@ -6,70 +6,96 @@
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 18:26:08 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/11/18 11:36:03 by kkafmagh         ###   ########.fr       */
+/*   Updated: 2024/11/21 15:54:43 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_len(char const *s1, char const *set)
+static int	trimstart(char const *s1, char const *set)
 {
 	int	i;
 	int	j;
-	int	size;
+	int	k;
 
 	i = 0;
 	j = 0;
-	size = 0;
+	k = 0;
 	while (s1[i])
 	{
-		while (set[j] && (s1[i] != set[j]))
+		while (set[j])
 		{
-			if (j == (int)ft_strlen(set) - 1)
-			{
-				size++;
-			}
+			if (set[j] == s1[i])
+				k = 1;
 			j++;
 		}
+		if (k == 0)
+			return (i);
+		k = 0;
 		j = 0;
 		i++;
 	}
-	return (size);
+	printf("%i\n", i);
+	return (i);
+}
+
+static int	trimend(char const *s1, char const *set)
+{
+	int	i;
+	int	j;
+	int	k;
+
+	i = ft_strlen(s1) - 1;
+	j = 0;
+	k = 0;
+	while (i)
+	{
+		while (set[j])
+		{
+			if (set[j] == s1[i])
+				k = 1;
+			j++;
+		}
+		if (k == 0)
+			return (i);
+		k = 0;
+		j = 0;
+		i--;
+	}
+	return (i);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*str;
-	int		k;
 	int		i;
-	int		j;
+	int		start;
+	int		end;
+	char	*str;
 
-	k = 0;
-	str = malloc(sizeof(char) * count_len(s1, set) + 1);
-	if (!str)
-		return (NULL);
-	i = -1;
-	while (s1[++i])
+	// int		j;
+	i = 0;
+	start = trimstart(s1, set);
+	end = trimend(s1, set);
+	str = malloc(sizeof(char) * ((end - start) + 2));
+	while (start < end + 1)
 	{
-		j = 0;
-		while (set[j] && (s1[i] != set[j]))
-		{
-			if (j == (int)ft_strlen(set) - 1)
-			{
-				str[k] = s1[i];
-				k++;
-			}
-			j++;
-		}
+		str[i] = s1[start];
+		i++;
+		start++;
 	}
+	str[i] = 0;
 	return (str);
 }
 
 // int	main(void)
 // {
-// 	char *str1 = "1234 564875 7945";
-// 	char *str2 = "57";
-// 	ft_strtrim(str1, str2);
+// 	char str1[] = "lorem \n ipsum \t dolor \n sit \t amet";
+// 	char str2[] = " ";
+// 	printf("%i\n", trimstart(str1, str2));
+
+// 	printf("%i\n", trimend(str1, str2));
+
+// 	// ft_strtrim(str1, str2);
 // 	printf("%s\n", ft_strtrim(str1, str2));
 // 	printf("%p", ft_strtrim(str1, str2));
 // }

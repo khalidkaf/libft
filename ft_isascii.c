@@ -6,9 +6,11 @@
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:35:45 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/11/07 12:40:24 by kkafmagh         ###   ########.fr       */
+/*   Updated: 2024/11/19 11:28:55 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isascii(int c)
 {

@@ -6,7 +6,7 @@
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 09:56:39 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/11/18 11:44:14 by kkafmagh         ###   ########.fr       */
+/*   Updated: 2024/11/23 13:53:15 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ void	ft_putendl_fd(char *s, int fd)
 	i = 0;
 	while (i < (unsigned int)ft_strlen(s))
 	{
-		write(fd, &s[i], 1);
+		write((unsigned int)fd, &s[i], 1);
 		i++;
 	}
-	write(fd, "\n", 1);
+	write((unsigned int)fd, "\n", 1);
 }
 
 // int	main(void)

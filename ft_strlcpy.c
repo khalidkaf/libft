@@ -6,7 +6,7 @@
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 17:04:37 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/11/19 20:02:37 by kkafmagh         ###   ########.fr       */
+/*   Updated: 2024/11/23 11:57:40 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t siz)
 	size_t	i;
 
 	i = 0;
-	if(siz == 0)
-	return (ft_strlen(src));
+	if (siz == 0)
+		return (ft_strlen(src));
 	while (i < siz - 1 && src[i] != '\0')
 	{
 		dst[i] = src[i];

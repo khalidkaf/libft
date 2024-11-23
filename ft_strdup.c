@@ -6,7 +6,7 @@
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 19:58:13 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/11/18 11:20:34 by kkafmagh         ###   ########.fr       */
+/*   Updated: 2024/11/23 11:57:21 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ char	*ft_strdup(const char *s)
 	char	*str;
 
 	i = 0;
-	if (!s)
-		return (NULL);
 	str = malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (!str)
 		return (NULL);

@@ -6,43 +6,11 @@
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 12:49:23 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/11/21 14:23:58 by kkafmagh         ###   ########.fr       */
+/*   Updated: 2024/11/22 19:52:27 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-// static unsigned int	ft_len(const char *str)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (str[i])
-// 	{
-// 		i++;
-// 	}
-// 	return (i);
-// }
-
-// int	ft_memcmp(const void *s1, const void *s2, size_t n)
-// {
-// 	unsigned char	*tmp1;
-// 	unsigned char	*tmp2;
-
-// 	tmp1 = s1;
-// 	tmp2 = s2;
-// 	while (n)
-// 	{
-// 		if (tmp1[0] != tmp2[0])
-// 		{
-// 			return (tmp1[0] - tmp2[0]);
-// 		}
-// 		tmp1++;
-// 		tmp2++;
-// 		n--;
-// 	}
-// 	return (0);
-// }
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
@@ -60,10 +28,13 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		return (NULL);
 	while (*big && lenlittle <= len && count < len)
 	{
-		if (!ft_memcmp(big, little, lenlittle))
+		if (!ft_memcmp(big, little, lenlittle) && !(ft_strlen(little) > len
+				- count))
 			return ((char *)big);
-		if (ft_strlen(little) > (ft_strlen(big) - count))
+		if (ft_strlen(little) > (ft_strlen(big)))
+		{
 			return (NULL);
+		}
 		big++;
 		count++;
 	}
@@ -75,8 +46,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 // 	char	*bigstr;
 // 	char	*littlestr;
 
-// 	bigstr = "khalid e s es est la";
-// 	littlestr = "est";
-// 	ft_strnstr(bigstr, littlestr, 3);
-// 	printf("ft_ : %s\n", ft_strnstr(bigstr, littlestr, 3));
+// 	bigstr = "aaabcabcd";
+// 	littlestr = "cd";
+// 	// ft_strnstr(bigstr, littlestr, 15);
+// 	printf("ft_ : %s\n", ft_strnstr(bigstr, littlestr, 8));
 // }

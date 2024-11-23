@@ -6,7 +6,7 @@
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 16:08:25 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/11/19 17:35:46 by kkafmagh         ###   ########.fr       */
+/*   Updated: 2024/11/22 16:42:20 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned char	*tmp;
 	unsigned char	*cpier;
 
-	if (!dest || !src)
+	if (!dest && !src)
 		return (NULL);
 	tmp = dest;
 	cpier = (unsigned char *)src;

@@ -6,11 +6,22 @@
 /*   By: kkafmagh <kkafmagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 17:00:49 by kkafmagh          #+#    #+#             */
-/*   Updated: 2024/11/21 14:38:15 by kkafmagh         ###   ########.fr       */
+/*   Updated: 2024/11/23 12:37:43 by kkafmagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static char	*empty(void)
+{
+	char	*str;
+
+	str = malloc(sizeof(char) * 1);
+	if (!str)
+		return (NULL);
+	str[0] = 0;
+	return (str);
+}
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -20,11 +31,13 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = start;
 	j = 0;
-	str = malloc((sizeof(char) * len) + 1);
-	if (start > ft_strlen(str))
-		return (str);
-	if (!s || ft_strlen(s) < start)
+	if (!s)
 		return (NULL);
+	if (start >= ft_strlen(s))
+		return (empty());
+	if (len > ft_strlen(s) - start)
+		len = ft_strlen(s) - start;
+	str = malloc((sizeof(char) * len) + 1);
 	if (!str)
 		return (NULL);
 	while (s[i] && len)
@@ -40,9 +53,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 // int	main(void)
 // {
-// char *str = "0";
-// printf("%s\n", ft_substr(str, 1, 1));
-// printf("%s\n", substr(str, 3, 3));
-// printf("%p\n", ft_substr(str, 3, 6));
-// printf("%p\n", substr(str, 3, 3));
+// 	char *str = "tripouille";
+// 	printf("%s\n", ft_substr(str, 0, 4200));
+// 	// printf("%s\n", substr(str, 3, 3));
+// 	printf("%p\n", ft_substr(str, 3, 6));
+// 	// printf("%p\n", substr(str, 3, 3));
 // }
